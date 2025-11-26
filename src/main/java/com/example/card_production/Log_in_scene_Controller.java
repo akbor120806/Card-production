@@ -3,7 +3,7 @@ package com.example.card_production;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class Log_in_scene_Controller {
     @FXML
     private Label welcomeText;
 
