@@ -17,7 +17,7 @@ public class Card_Production_DashboardController
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Card_Production_Application.class.getResource("Akbor/Managing_Director_Dashboard.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
-            Stage nextStage = new Stage();
+            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
             nextStage.setTitle("Card_Production");
             nextStage.setScene(nextScene);
             nextStage.show();
@@ -32,7 +32,7 @@ public class Card_Production_DashboardController
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Card_Production_Application.class.getResource( "Akbor/Production_Director_Dashboard.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
-            Stage nextStage = new Stage();
+            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
             nextStage.setTitle("Card_Production");
             nextStage.setScene(nextScene);
             nextStage.show();
