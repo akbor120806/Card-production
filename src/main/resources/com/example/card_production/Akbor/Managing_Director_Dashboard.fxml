@@ -38,7 +38,7 @@
       <Button layoutX="62.0" layoutY="299.0" mnemonicParsing="false" onAction="#clientOrderOnActionButton" prefHeight="43.0" prefWidth="140.0" text="ClientOrder" />
       <Button layoutX="58.0" layoutY="360.0" mnemonicParsing="false" onAction="#selesReportOnActionButton" prefHeight="43.0" prefWidth="140.0" text="SalesReport" />
       <Label layoutX="332.0" layoutY="67.0" text="Tytel" />
-      <TextField fx:id="tytelShowLogin" layoutX="386.0" layoutY="64.0" onAction="#OnActionButton" />
+      <TextField fx:id="tytelShowLogin" layoutX="386.0" layoutY="64.0" />
       <TextArea fx:id="notificationTextArea" layoutX="428.0" layoutY="182.0" prefHeight="200.0" prefWidth="200.0" promptText="Notification" />
       <Button layoutX="479.0" layoutY="450.0" mnemonicParsing="false" onAction="#homeOnActionButton" prefHeight="61.0" prefWidth="105.0" text="Home" />
       <TextField fx:id="nameShowLogin" layoutX="107.0" layoutY="55.0" />
