@@ -19,4 +19,20 @@ public class Card_Production_DashboardController
     @javafx.fxml.FXML
     public void logOutOnActionButton(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void customerOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void inventoryManagerOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void selseExecutiveOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void deliveryStaf(ActionEvent actionEvent) {
+    }
 }

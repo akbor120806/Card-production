@@ -1,5 +1,9 @@
 package com.example.card_production.Akbor;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+
 public class ManagingDirector_Dashboard
 {
     @javafx.fxml.FXML

@@ -29,10 +29,10 @@
       </MenuBar>
       <Button layoutX="32.0" layoutY="70.0" mnemonicParsing="false" onAction="#managingDirectorOnActionButton" text="ManagingDirector" />
       <Button layoutX="450.0" layoutY="323.0" mnemonicParsing="false" onAction="#logOutOnActionButton" text="LogOut" />
-      <Button layoutX="32.0" layoutY="285.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="32.0" layoutY="241.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="32.0" layoutY="194.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="32.0" layoutY="147.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="32.0" layoutY="285.0" mnemonicParsing="false" onAction="#customerOnActionButton" text="Customer" />
+      <Button layoutX="32.0" layoutY="241.0" mnemonicParsing="false" onAction="#deliveryStaf" text="DeliveryStaf" />
+      <Button layoutX="32.0" layoutY="194.0" mnemonicParsing="false" onAction="#selseExecutiveOnActionButton" text="SelesExecutive" />
+      <Button layoutX="32.0" layoutY="147.0" mnemonicParsing="false" onAction="#inventoryManagerOnActionButton" text="InventoryManager" />
       <Button layoutX="32.0" layoutY="105.0" mnemonicParsing="false" onAction="#productionManagerOnActionButton" text="ProductionManager" />
    </children>
 </AnchorPane>
