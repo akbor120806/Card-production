@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.card_production.Ashik.DeliveryDashboardController">
+    <Button text="View Assigned Deliveries" layoutX="100" layoutY="100" onAction="#viewAssignedDeliveries"/>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
+    <TextField fx:id="orderId" layoutX="100" layoutY="150" promptText="Enter Order ID"/>
+    <Button text="Update Delivery Status" layoutX="100" layoutY="200" onAction="#updateDeliveryStatus"/>
 
+    <Button text="Confirm Delivery Completion" layoutX="100" layoutY="250" onAction="#confirmDeliveryCompletion"/>
+    <TextField fx:id="reason" layoutX="100" layoutY="300" promptText="Enter reason for failure"/>
+    <Button text="Handle Failed Delivery" layoutX="100" layoutY="350" onAction="#handleFailedDelivery"/>
 </AnchorPane>

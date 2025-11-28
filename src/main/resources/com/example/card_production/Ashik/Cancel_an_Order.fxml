@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
+<VBox spacing="8" alignment="CENTER"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.card_production.Ashik.CancelOrderController">
+    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
 
-</AnchorPane>
+    <Label text="Cancel Order" style="-fx-font-size:18;"/>
+
+    <ComboBox fx:id="activeOrdersCombo" promptText="Select active order"/>
+    <TextArea fx:id="reasonArea" promptText="Reason for cancellation" prefRowCount="3"/>
+
+    <Button text="Cancel Order" onAction="#handleCancelOrder"/>
+
+    <Label fx:id="messageLabel" visible="false"/>
+</VBox>

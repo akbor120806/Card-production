@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CustomerController.java"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="412.0" prefWidth="253.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.card_production.Ashik.CustomerDashboardController">
+    <TextField fx:id="orderDetails" layoutX="56.0" layoutY="101.0" promptText="Enter Order Details" />
+    <Button layoutX="86.0" layoutY="147.0" onAction="#placeOrder" text="Place Order" />
 
+    <TextField fx:id="orderId" layoutX="50.0" layoutY="199.0" promptText="Enter Order ID to Track" />
+    <Button layoutX="91.0" layoutY="250.0" onAction="#trackOrder" text="Track Order" />
+
+    <TextField fx:id="paymentAmount" layoutX="50.0" layoutY="294.0" promptText="Enter Payment Amount" />
+    <Button layoutX="77.0" layoutY="327.0" onAction="#makePayment" text="Make Payment" />
 </AnchorPane>

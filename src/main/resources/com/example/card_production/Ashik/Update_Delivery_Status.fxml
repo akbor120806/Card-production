@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
+<VBox spacing="8" alignment="CENTER"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.card_production.Ashik.UpdateStatusController">
+    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
 
-</AnchorPane>
+    <Label text="Update Delivery Status" style="-fx-font-size:18;"/>
+
+    <ComboBox fx:id="ordersCombo" promptText="Select order"/>
+    <ComboBox fx:id="statusCombo" promptText="Select status"/>
+    <Button text="Update Status" onAction="#handleUpdateStatus"/>
+
+    <Label fx:id="messageLabel" visible="false"/>
+</VBox>

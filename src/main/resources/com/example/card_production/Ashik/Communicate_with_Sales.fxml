@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
+<BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+            fx:controller="com.example.card_production.Ashik.CommunicateWithSalesController">
+    <top>
+        <Label text="Support / Messages" style="-fx-font-size:18;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+    <center>
+        <TextArea fx:id="conversationArea" editable="false" wrapText="true"/>
+    </center>
+    <bottom>
+        <VBox spacing="5" alignment="CENTER">
+            <TextField fx:id="messageField" promptText="Type your message..."/>
+            <HBox spacing="8" alignment="CENTER">
+                <Button text="Send" onAction="#handleSend"/>
+                <Button text="End Chat & Logout" onAction="#handleEndChat"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
+<VBox spacing="8" alignment="CENTER"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.card_production.Ashik.DailyDeliveryReportController">
+    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
 
-</AnchorPane>
+    <Label text="Daily Delivery Report" style="-fx-font-size:18;"/>
+
+    <DatePicker fx:id="datePicker" promptText="Select date"/>
+    <Button text="Generate Report" onAction="#handleGenerateReport"/>
+
+    <TextArea fx:id="reportArea" prefRowCount="8" editable="false"
+              promptText="Summary report will appear here"/>
+
+    <Button text="Send to Admin" onAction="#handleSendToAdmin"/>
+
+    <Label fx:id="messageLabel" visible="false"/>
+</VBox>

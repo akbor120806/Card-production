@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
+<VBox spacing="8" alignment="CENTER"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.card_production.Ashik.ReviewRateController">
+    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
 
-</AnchorPane>
+    <Label text="Review & Rate Product" style="-fx-font-size:18;"/>
+
+    <ComboBox fx:id="completedOrdersCombo" promptText="Select delivered order"/>
+    <Slider fx:id="ratingSlider" min="1" max="5" value="5" majorTickUnit="1"
+            minorTickCount="0" snapToTicks="true" showTickLabels="true" showTickMarks="true"/>
+    <TextArea fx:id="feedbackArea" promptText="Write your feedback" prefRowCount="3"/>
+
+    <Button text="Submit Review" onAction="#handleSubmitReview"/>
+
+    <Label fx:id="messageLabel" visible="false"/>
+</VBox>
+
