@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import jdk.internal.icu.text.NormalizerBase;
@@ -13,9 +13,16 @@ import jdk.internal.icu.text.NormalizerBase;
 public class Log_in_scene_Controller {
 
     @FXML
-    private TextField PasswordTestField;
+    private ComboBox<String> positionComboBox;
+
+    public Log_in_scene_Controller() {
+    }
+
+
     @FXML
-    private TextField userNameOrEmailTextField;
+    private TextField PasswordTestFild;
+    @FXML
+    private TextField userNameOrEmailTextFild;
 
     @FXML
     protected void onHelloButtonClick() {
@@ -24,7 +31,13 @@ public class Log_in_scene_Controller {
     }
 
     @FXML
+    public void initialize() {
+        positionComboBox.getItems().addAll("ManagingDirector","ProductionManager","InventoryManager","SelesExecutive","DeliveryStaf","Customer");
+    }
+
+    @FXML
     public void signInOnActionButton(ActionEvent actionEvent) {
+
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Card_Production_Application.class.getResource("Card_Production_Dashboard.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
