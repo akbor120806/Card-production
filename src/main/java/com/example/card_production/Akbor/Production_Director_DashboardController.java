@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class Production_Director_Dashboard
+public class Production_Director_DashboardController
 {
     @javafx.fxml.FXML
     private TextField tytelShowTextFile;

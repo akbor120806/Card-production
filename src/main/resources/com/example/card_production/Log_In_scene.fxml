@@ -15,6 +15,6 @@
       <Button layoutX="122.0" layoutY="231.0" mnemonicParsing="false" onAction="#signInOnActionButton" text="Sign_in" />
       <Button layoutX="460.0" layoutY="218.0" mnemonicParsing="false" onAction="#SignUpOnActionButton" text="Sign_up" />
       <Label layoutX="126.0" layoutY="151.0" text="Position" />
-      <ComboBox layoutX="208.0" layoutY="147.0" prefWidth="150.0" />
+      <ComboBox fx:id="positionComboBox" layoutX="208.0" layoutY="147.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

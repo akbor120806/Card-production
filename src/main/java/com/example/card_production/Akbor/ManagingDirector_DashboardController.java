@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class ManagingDirector_Dashboard
+public class ManagingDirector_DashboardController
 {
     @javafx.fxml.FXML
     private TextField tytelShowLogin;
