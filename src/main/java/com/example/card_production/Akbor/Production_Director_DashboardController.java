@@ -53,7 +53,7 @@ public class Production_Director_DashboardController
     @javafx.fxml.FXML
     public void homeOnActionButton(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(Card_Production_Application.class.getResource("Akbor/Card_Production_Dashboard.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Card_Production_Application.class.getResource("Card_Production_Dashboard.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
             nextStage.setTitle("Card_Production");
