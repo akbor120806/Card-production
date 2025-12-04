@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.card_production.Akbor.RawMaterialsController">
-
+<AnchorPane prefHeight="583.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.card_production.Akbor.RawMaterialsController">
+   <children>
+      <Label layoutX="59.0" layoutY="42.0" text="Required" />
+      <Label layoutX="39.0" layoutY="88.0" text="AvailableQty" />
+      <Label layoutX="335.0" layoutY="42.0" text="Item" />
+      <Label layoutX="300.0" layoutY="88.0" text="RequiredQty" />
+      <Button layoutX="145.0" layoutY="178.0" mnemonicParsing="false" onAction="#GenerateRequestOnActionButton" prefHeight="57.0" prefWidth="123.0" text="GenerateRequest" />
+      <TableView fx:id="TableView" layoutX="15.0" layoutY="270.0" prefHeight="200.0" prefWidth="359.0">
+        <columns>
+          <TableColumn fx:id="RequiredTableView" prefWidth="75.0" text="Required" />
+          <TableColumn fx:id="ItemTableView" prefWidth="75.0" text="Item" />
+            <TableColumn fx:id="AvailableQtyTableView" prefWidth="102.6666259765625" text="AvailableQty" />
+            <TableColumn fx:id="RequiredQtyTableView" prefWidth="105.3333740234375" text="RequiredQty" />
+        </columns>
+      </TableView>
+      <TextArea fx:id="notificationTextArea" layoutX="400.0" layoutY="130.0" prefHeight="177.0" prefWidth="200.0" promptText="Notification" />
+      <TextField fx:id="RequiredTextField" layoutX="120.0" layoutY="38.0" />
+      <TextField fx:id="ItemTextField" layoutX="371.0" layoutY="38.0" />
+      <TextField fx:id="AvailableQtyTextField" layoutX="120.0" layoutY="84.0" />
+      <TextField fx:id="RequiredQtyTextField" layoutX="371.0" layoutY="84.0" />
+      <Button layoutX="223.0" layoutY="499.0" mnemonicParsing="false" onAction="#SubmitOnActionButton" prefHeight="57.0" prefWidth="123.0" text="Submit" />
+      <Button layoutX="416.0" layoutY="505.0" mnemonicParsing="false" onAction="#BackToProductDashboardOnActionButton" prefHeight="51.0" prefWidth="167.0" text="Back To Product Dashboard" />
+   </children>
 </AnchorPane>

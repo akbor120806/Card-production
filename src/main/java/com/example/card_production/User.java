@@ -1,14 +1,16 @@
 package com.example.card_production;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     protected String name;
-    protected int password;
+    protected String password;
     protected String position;
 
     public User() {
     }
 
-    public User(String name, int password, String position) {
+    public User(String name, String password, String position) {
         this.name = name;
         this.password = password;
         this.position = position;
@@ -22,11 +24,11 @@ public class User {
         this.name = name;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 

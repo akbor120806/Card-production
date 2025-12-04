@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.card_production.Akbor.ProductController">
-
+<AnchorPane prefHeight="513.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.card_production.Akbor.ProductController">
+   <children>
+      <Label layoutX="48.0" layoutY="40.0" text="DisignsId" />
+      <Label layoutX="300.0" layoutY="53.0" prefHeight="17.0" prefWidth="149.0" text="InspectionSchedule" />
+      <Label layoutX="34.0" layoutY="94.0" text="MeetingNotes" />
+      <TextArea fx:id="Notification" layoutX="428.0" layoutY="103.0" prefHeight="200.0" prefWidth="200.0" promptText="Notificationb" />
+      <TextField fx:id="DisignsIdTextFiel" layoutX="123.0" layoutY="44.0" />
+      <DatePicker fx:id="InspectionScheduleDatePicker" layoutX="415.0" layoutY="52.0" prefHeight="25.0" prefWidth="141.0" />
+      <Button layoutX="29.0" layoutY="148.0" mnemonicParsing="false" onAction="#SendReminderOnActionButton" prefHeight="46.0" prefWidth="94.0" text="SendReminder" />
+      <TableView fx:id="TableView" layoutX="14.0" layoutY="257.0" prefHeight="200.0" prefWidth="368.0">
+        <columns>
+          <TableColumn fx:id="DisignsIdTableView" prefWidth="112.66668224334717" text="DisignsId" />
+          <TableColumn fx:id="InspectionScheduleTableView" prefWidth="130.66664123535156" text="InspectionSchedule" />
+            <TableColumn fx:id="MeetingNotesTableView" prefWidth="124.66664123535156" text="MeetingNotes" />
+        </columns>
+      </TableView>
+      <Button layoutX="234.0" layoutY="148.0" mnemonicParsing="false" onAction="#SaveNotesOnActionButton" prefHeight="46.0" prefWidth="107.0" text="SaveNotes" />
+      <Button layoutX="438.0" layoutY="427.0" mnemonicParsing="false" onAction="#BackToProductionDashboardOnActionButton" prefHeight="60.0" prefWidth="180.0" text="Back To Production Dashboard" />
+      <TextField fx:id="MeetingNotesTextFile" layoutX="123.0" layoutY="90.0" />
+   </children>
 </AnchorPane>

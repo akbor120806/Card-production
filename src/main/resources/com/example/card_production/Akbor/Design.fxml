@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.card_production.Akbor.DesignController">
-
+<AnchorPane prefHeight="553.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.card_production.Akbor.DesignController">
+   <children>
+      <Label layoutX="51.0" layoutY="58.0" text="Designs" />
+      <TextArea fx:id="Comment" layoutX="416.0" layoutY="127.0" prefHeight="200.0" prefWidth="200.0" promptText="Comment" />
+      <TextField fx:id="DesignsTextFiel" layoutX="108.0" layoutY="54.0" />
+      <Button layoutX="43.0" layoutY="127.0" mnemonicParsing="false" onAction="#ApproveOnActionButton" prefHeight="57.0" prefWidth="100.0" text="Approve" />
+      <TableView fx:id="TableView" layoutX="8.0" layoutY="199.0" prefHeight="200.0" prefWidth="377.0">
+        <columns>
+          <TableColumn fx:id="DesignsTableView" prefWidth="190.66665172576904" text="Designs" />
+          <TableColumn fx:id="DesignPreviewTableView" prefWidth="185.33335876464844" text="DesignPreview" />
+        </columns>
+      </TableView>
+      <TextField fx:id="DesignPreviewTextFiel" layoutX="408.0" layoutY="54.0" />
+      <Label layoutX="315.0" layoutY="57.0" text="DesignPreview" />
+      <Button layoutX="197.0" layoutY="120.0" mnemonicParsing="false" onAction="#RequestChangesOnActionButton" prefHeight="57.0" prefWidth="119.0" text="RequestChanges" />
+      <Button layoutX="430.0" layoutY="399.0" mnemonicParsing="false" onAction="#BackToProductDashboardOnActionButton" prefHeight="57.0" prefWidth="182.0" text="Back To Product Dashboard" />
+      <TextArea fx:id="CopyRightCheckerTextArea" layoutX="216.0" layoutY="428.0" prefHeight="105.0" prefWidth="200.0" />
+      <Button layoutX="21.0" layoutY="435.0" mnemonicParsing="false" onAction="#CopyRightCheckerOnActionButotn" prefHeight="77.0" prefWidth="165.0" text="CopyRightChecker" />
+   </children>
 </AnchorPane>
