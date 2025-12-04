@@ -130,11 +130,11 @@ public class Log_in_scene_Controller {
                             break;
 
                         case "DeliveryStaf":
-                            fxmlFile = "DeliveryStaff_Dashboard.fxml";
+                            fxmlFile = "Ashik/delivery_dashboard.fxml";
                             break;
 
                         case "Customer":
-                            fxmlFile = "Customer_Dashboard.fxml";
+                            fxmlFile = "Ashik/customer_dashboard.fxml";
                             break;
                     }
 
