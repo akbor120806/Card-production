@@ -12,11 +12,7 @@ import javafx.stage.Stage;
 public class ManagingDirector_DashboardController
 {
     @javafx.fxml.FXML
-    private TextField tytelShowLogin;
-    @javafx.fxml.FXML
     private TextArea notificationTextArea;
-    @javafx.fxml.FXML
-    private TextField nameShowLogin;
 
     @javafx.fxml.FXML
     public void initialize() {
