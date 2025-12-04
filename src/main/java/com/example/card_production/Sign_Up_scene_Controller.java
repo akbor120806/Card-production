@@ -79,6 +79,15 @@ public class Sign_Up_scene_Controller {
             notificationTextField.setText("please Give me valid User Name or Password ");
             return;
         }
+        if (!mobile.matches("\\d+")){
+            notificationTextField.setText("Digits Only");
+        }
+        if (mobile.length()<11){
+            notificationTextField.setText("must be 11 digit");
+        }
+        if (!gmail.contains("@")){
+            notificationTextField.setText("must proper gmail");
+        }
 
         boolean sameName = false;
         for (Sign_Up_Scene a : userList) {
