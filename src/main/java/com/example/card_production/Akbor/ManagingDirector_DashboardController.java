@@ -11,8 +11,6 @@ import javafx.stage.Stage;
 
 public class ManagingDirector_DashboardController
 {
-    @javafx.fxml.FXML
-    private TextArea notificationTextArea;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -24,7 +22,7 @@ public class ManagingDirector_DashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(Card_Production_Application.class.getResource("Akbor/StaffPerformance.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Card_Production");
+            nextStage.setTitle("staffPerformanceDashboard");
             nextStage.setScene(nextScene);
             nextStage.show();
         } catch (Exception e) {
@@ -38,7 +36,7 @@ public class ManagingDirector_DashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(Card_Production_Application.class.getResource("Akbor/Marketing.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Card_Production");
+            nextStage.setTitle("marketingOnDashboard");
             nextStage.setScene(nextScene);
             nextStage.show();
         } catch (Exception e) {
@@ -52,7 +50,7 @@ public class ManagingDirector_DashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(Card_Production_Application.class.getResource("Akbor/Production_Plan.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Card_Production");
+            nextStage.setTitle("production_PlanDashboard");
             nextStage.setScene(nextScene);
             nextStage.show();
         } catch (Exception e) {
@@ -66,7 +64,7 @@ public class ManagingDirector_DashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(Card_Production_Application.class.getResource("Akbor/budget.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Card_Production");
+            nextStage.setTitle("budgetDashboard");
             nextStage.setScene(nextScene);
             nextStage.show();
         } catch (Exception e) {
@@ -74,19 +72,7 @@ public class ManagingDirector_DashboardController
         }
     }
 
-    @javafx.fxml.FXML
-    public void homeOnActionButton(ActionEvent actionEvent) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(Card_Production_Application.class.getResource("Card_Production_Dashboard.fxml"));
-            Scene nextScene = new Scene(fxmlLoader.load());
-            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Card_Production");
-            nextStage.setScene(nextScene);
-            nextStage.show();
-        } catch (Exception e) {
-//            throw new RuntimeException(e);
-        }
-    }
+
 
     @javafx.fxml.FXML
     public void selesReportOnActionButton(ActionEvent actionEvent) {
@@ -94,7 +80,7 @@ public class ManagingDirector_DashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(Card_Production_Application.class.getResource("Akbor/SalesReport.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Card_Production");
+            nextStage.setTitle("selesReportDashboard");
             nextStage.setScene(nextScene);
             nextStage.show();
         } catch (Exception e) {
@@ -108,7 +94,7 @@ public class ManagingDirector_DashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(Card_Production_Application.class.getResource("Akbor/ClientOrder.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Card_Production");
+            nextStage.setTitle("clientOrderDashboard");
             nextStage.setScene(nextScene);
             nextStage.show();
         } catch (Exception e) {
@@ -116,4 +102,18 @@ public class ManagingDirector_DashboardController
         }
     }
 
+    @javafx.fxml.FXML
+    public void SignOutOnActionButton(ActionEvent actionEvent) {
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Card_Production_Application.class.getResource("Log_In_scene.fxml"));
+            Scene nextScene = new Scene(fxmlLoader.load());
+            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            nextStage.setTitle("Card_Production");
+            nextStage.setScene(nextScene);
+            nextStage.show();
+        } catch (Exception e) {
+//            throw new RuntimeException(e);
+        }
+    }
 }

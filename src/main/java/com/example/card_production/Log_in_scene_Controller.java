@@ -67,7 +67,7 @@ public class Log_in_scene_Controller {
                 }
 
 
-                }catch (Exception a){
+                }catch (Exception _){
 
             }
 
