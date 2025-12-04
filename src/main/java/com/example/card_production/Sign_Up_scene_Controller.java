@@ -63,6 +63,8 @@ public class Sign_Up_scene_Controller {
 
     @FXML
     public void signUpOnActionButton(ActionEvent actionEvent) {
+        mobile = MobileNumberTextFile.getText();
+        gmail = gmailTextFile.getText();
         boolean digitFound = false;
         for (int i = 0; i < nameTextFiled.getText().length(); i++) {
             if (Character.isDigit(nameTextFiled.getText().charAt(i))) digitFound = true;
