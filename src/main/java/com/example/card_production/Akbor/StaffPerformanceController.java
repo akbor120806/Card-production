@@ -1,42 +1,51 @@
 package com.example.card_production.Akbor;
 
+import com.example.card_production.AppendableObjectOutputSteam;
 import com.example.card_production.Card_Production_Application;
 import com.example.card_production.Sign_Up_Scene;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class StaffPerformanceController
 {
     public static ArrayList<StaffPerformance> userList = new ArrayList<>();
-    @javafx.fxml.FXML
+    @FXML
     private TableColumn<StaffPerformance,String> DepartmentTableView;
-    @javafx.fxml.FXML
+    @FXML
     private TableColumn<StaffPerformance,String> performanceScoreTableView;
-    @javafx.fxml.FXML
+    @FXML
     private TableColumn<StaffPerformance,String> attendanceAttendanceTableView;
-    @javafx.fxml.FXML
+    @FXML
     private TableColumn <StaffPerformance,String>staffNameTableView;
-    @javafx.fxml.FXML
+    @FXML
     private TextField PerformanceScoreTextArea;
-    @javafx.fxml.FXML
+    @FXML
     private ComboBox<String> DepartmentComboBox;
-    @javafx.fxml.FXML
+    @FXML
     private TextField StaffNameTextArea;
-    @javafx.fxml.FXML
+    @FXML
     private TextField AttendanceAttendanceTextArea;
-    @javafx.fxml.FXML
+    @FXML
     private TableView<StaffPerformance> TableCollumeView;
-    @javafx.fxml.FXML
+    @FXML
     private TextArea Notification;
+    @FXML
+    private BorderPane dashboardBorderpane;
 
-    @javafx.fxml.FXML
+    @FXML
     public void initialize() {
         DepartmentComboBox.getItems().addAll("Printing","cutting","binding","packaging","ItSupport");
 
@@ -45,24 +54,38 @@ public class StaffPerformanceController
         DepartmentTableView.setCellValueFactory(new PropertyValueFactory<StaffPerformance, String>("department"));
         performanceScoreTableView.setCellValueFactory(new PropertyValueFactory<StaffPerformance, String>("performanceScore"));
         attendanceAttendanceTableView.setCellValueFactory(new PropertyValueFactory<StaffPerformance, String>("attendance"));
+
+
+
     }
 
-    @javafx.fxml.FXML
+
+
+    @FXML
     public void FlagForReviewOnActionButton(ActionEvent actionEvent) {
 
-            if (userList.isEmpty()) {
+
+
+
+        if (userList.isEmpty()) {
                 Notification.setText("No staff available.");
                 return;
             }
 
+        StaffPerformance highScoreStaff = userList.get(0);
+        for (StaffPerformance a : userList) {
+            if (a.getPerformanceScore() > highScoreStaff.getPerformanceScore()) {
+                highScoreStaff = a;
+            }
+        }
+        TableCollumeView.getItems().clear();
+        TableCollumeView.getItems().add(highScoreStaff);
 
 
         }
 
 
-
-
-    @javafx.fxml.FXML
+    @FXML
     public void ApproveOnActionButton(ActionEvent actionEvent) {
 
         boolean digitFound = false;
@@ -115,10 +138,33 @@ public class StaffPerformanceController
         PerformanceScoreTextArea.clear();
         AttendanceAttendanceTextArea.clear();
 
+        try{
+            File f = new File("StaffPerformance.bin");
+
+            FileOutputStream fos = null;
+            ObjectOutputStream oos = null;
+            if (f.exists()){
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputSteam(fos);
+            }
+            else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+
+
+            for(StaffPerformance c : userList){
+                oos.writeObject(c);
+            }
+            oos.close();
+
+        }catch (Exception e){
+//
+        }
 
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void BackToManagingDashboard(ActionEvent actionEvent) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Card_Production_Application.class.getResource("Managing_Director_Dashboard.fxml"));
@@ -134,7 +180,18 @@ public class StaffPerformanceController
         }
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void ShowPichartOnActionButton(ActionEvent actionEvent) {
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(
+                    Card_Production_Application.class.getResource("StaffPichart.fxml")
+            );
+
+            dashboardBorderpane.setCenter(fxmlLoader.load());
+
+        } catch (Exception e) {
+//            e.printStackTrace();
+        }
     }
 }

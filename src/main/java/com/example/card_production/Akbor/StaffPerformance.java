@@ -1,6 +1,8 @@
 package com.example.card_production.Akbor;
 
-public class StaffPerformance {
+import java.io.Serializable;
+
+public class StaffPerformance implements Serializable {
     protected String staffName,department;
     protected int performanceScore, attendance;
 
@@ -55,4 +57,7 @@ public class StaffPerformance {
                 ", attendance=" + attendance +
                 '}';
     }
+
+
+
 }

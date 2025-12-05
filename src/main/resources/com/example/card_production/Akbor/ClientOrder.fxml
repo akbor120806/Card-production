@@ -8,7 +8,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="596.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.card_production.Akbor.ClientOrderController">
    <children>
       <Label layoutX="48.0" layoutY="40.0" text="ClientName" />
@@ -20,7 +19,7 @@
       <TextField fx:id="DesignTextField" layoutX="423.0" layoutY="44.0" />
       <TextField fx:id="DeadlineTextField" layoutX="423.0" layoutY="94.0" />
       <Button layoutX="58.0" layoutY="215.0" mnemonicParsing="false" onAction="#ApproveOnActionButton" prefHeight="43.0" prefWidth="111.0" text="Approve" />
-      <TableView layoutX="14.0" layoutY="342.0" onSort="#tebleView" prefHeight="139.0" prefWidth="443.0">
+      <TableView fx:id="TableView" layoutX="14.0" layoutY="342.0" prefHeight="139.0" prefWidth="443.0">
         <columns>
           <TableColumn fx:id="ClientNameTableView" prefWidth="107.0" text="ClientName" />
           <TableColumn fx:id="DesignTableView" prefWidth="94.0" text="Design" />
