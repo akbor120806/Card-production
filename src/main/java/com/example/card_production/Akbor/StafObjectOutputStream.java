@@ -5,11 +5,14 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 
 public class StafObjectOutputStream extends ObjectOutputStream {
+
     public StafObjectOutputStream(OutputStream out) throws IOException {
         super(out);
     }
 
-    protected void writeStreamHeader(){
-//
+    @Override
+    protected void writeStreamHeader() throws IOException {
+        // prevents writing a new header while appending
+        reset();
     }
 }

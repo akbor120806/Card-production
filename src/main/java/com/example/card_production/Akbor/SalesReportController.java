@@ -1,9 +1,14 @@
 package com.example.card_production.Akbor;
 
+import com.example.card_production.Card_Production_Application;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
-public class SakesReportController
+public class SalesReportController
 {
     @javafx.fxml.FXML
     private TableColumn RevenueTableView;
@@ -56,5 +61,17 @@ public class SakesReportController
 
     @javafx.fxml.FXML
     public void Managing_Director_DashboardOnActionButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Card_Production_Application.class.getResource("Akbor/Managing_Director_Dashboard.fxml"));
+            Scene nextScene = new Scene(fxmlLoader.load());
+
+            Stage nextStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            nextStage.setTitle("Managing_Director_Dashboard");
+            nextStage.setScene(nextScene);
+            nextStage.show();
+
+        } catch (Exception e) {
+//            e.printStackTrace();
+        }
     }
 }

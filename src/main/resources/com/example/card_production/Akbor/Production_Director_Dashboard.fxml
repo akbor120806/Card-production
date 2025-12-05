@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane prefHeight="591.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.card_production.Akbor.Production_Director_DashboardController">
    <children>
@@ -31,18 +27,13 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Button layoutX="64.0" layoutY="129.0" mnemonicParsing="false" onAction="#rawMaterialsOnActionButton" prefHeight="37.0" prefWidth="126.0" text="RawMaterials" />
-      <Label layoutX="52.0" layoutY="66.0" text="Name" />
-      <TextField fx:id="ShowNameTextFile" layoutX="107.0" layoutY="62.0" />
-      <TextField fx:id="tytelShowTextFile" layoutX="422.0" layoutY="62.0" />
-      <Label layoutX="363.0" layoutY="66.0" text="tytel" />
-      <Button layoutX="62.0" layoutY="188.0" mnemonicParsing="false" onAction="#scheduleOnActionButton" prefHeight="37.0" prefWidth="126.0" text="Schedule" />
-      <Button layoutX="62.0" layoutY="249.0" mnemonicParsing="false" onAction="#ProductTestDetalsOnActionButton" prefHeight="37.0" prefWidth="126.0" text="ProductTestDetals" />
-      <Button layoutX="62.0" layoutY="308.0" mnemonicParsing="false" onAction="#cordinateTeamsOnActionButton" prefHeight="37.0" prefWidth="126.0" text="CoordinateTeams" />
-      <Button layoutX="60.0" layoutY="372.0" mnemonicParsing="false" onAction="#ProductOnActionButton" prefHeight="37.0" prefWidth="126.0" text="Product" />
-      <Button layoutX="62.0" layoutY="428.0" mnemonicParsing="false" onAction="#QualityReportOnActionButton" prefHeight="37.0" prefWidth="126.0" text="QualityReport" />
-      <Button layoutX="62.0" layoutY="492.0" mnemonicParsing="false" onAction="#designOnActionButton" prefHeight="37.0" prefWidth="126.0" text="Design" />
-      <TextArea fx:id="notificationTextArea" layoutX="386.0" layoutY="168.0" prefHeight="200.0" prefWidth="200.0" promptText="notification" />
-      <Button layoutX="409.0" layoutY="492.0" mnemonicParsing="false" onAction="#homeOnActionButton" prefHeight="37.0" prefWidth="126.0" text="Home" />
+      <Button layoutX="240.0" layoutY="99.0" mnemonicParsing="false" onAction="#rawMaterialsOnActionButton" prefHeight="37.0" prefWidth="126.0" text="RawMaterials" />
+      <Button layoutX="158.0" layoutY="151.0" mnemonicParsing="false" onAction="#scheduleOnActionButton" prefHeight="37.0" prefWidth="126.0" text="Schedule" />
+      <Button layoutX="296.0" layoutY="151.0" mnemonicParsing="false" onAction="#ProductTestDetalsOnActionButton" prefHeight="37.0" prefWidth="126.0" text="ProductTestDetals" />
+      <Button layoutX="359.0" layoutY="196.0" mnemonicParsing="false" onAction="#cordinateTeamsOnActionButton" prefHeight="37.0" prefWidth="126.0" text="CoordinateTeams" />
+      <Button layoutX="221.0" layoutY="196.0" mnemonicParsing="false" onAction="#ProductOnActionButton" prefHeight="37.0" prefWidth="126.0" text="Product" />
+      <Button layoutX="79.0" layoutY="196.0" mnemonicParsing="false" onAction="#QualityReportOnActionButton" prefHeight="37.0" prefWidth="126.0" text="QualityReport" />
+      <Button layoutX="3.0" layoutY="244.0" mnemonicParsing="false" onAction="#designOnActionButton" prefHeight="37.0" prefWidth="126.0" text="Design" />
+      <Button layoutX="455.0" layoutY="244.0" mnemonicParsing="false" onAction="#homeOnActionButton" prefHeight="37.0" prefWidth="126.0" text="Home" />
    </children>
 </AnchorPane>

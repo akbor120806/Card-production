@@ -145,7 +145,7 @@ public class StaffPerformanceController
             ObjectOutputStream oos = null;
             if (f.exists()){
                 fos = new FileOutputStream(f, true);
-                oos = new AppendableObjectOutputSteam(fos);
+                oos = new StafObjectOutputStream(fos);
             }
             else {
                 fos = new FileOutputStream(f);
@@ -153,9 +153,8 @@ public class StaffPerformanceController
             }
 
 
-            for(StaffPerformance c : userList){
-                oos.writeObject(c);
-            }
+            oos.writeObject(a);
+
             oos.close();
 
         }catch (Exception e){
@@ -167,7 +166,7 @@ public class StaffPerformanceController
     @FXML
     public void BackToManagingDashboard(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(Card_Production_Application.class.getResource("Managing_Director_Dashboard.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Card_Production_Application.class.getResource("Akbor/Managing_Director_Dashboard.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
 
             Stage nextStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
