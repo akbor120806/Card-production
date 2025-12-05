@@ -12,7 +12,6 @@ public class StafObjectOutputStream extends ObjectOutputStream {
 
     @Override
     protected void writeStreamHeader() throws IOException {
-        // prevents writing a new header while appending
-        reset();
+        // prevent writing new header
     }
 }
