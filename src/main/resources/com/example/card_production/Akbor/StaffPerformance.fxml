@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
@@ -13,21 +14,23 @@
       <Label layoutX="117.0" layoutY="50.0" text="StaffName" />
       <Label layoutX="420.0" layoutY="50.0" text="Department" />
       <Label layoutX="90.0" layoutY="108.0" text="PerformanceScore" />
-      <Label layoutX="371.0" layoutY="108.0" text="AttendanceAttendance" />
-      <TableView fx:id="TableCollumeView" layoutX="78.0" layoutY="337.0" prefHeight="137.0" prefWidth="466.0">
+      <Label layoutX="371.0" layoutY="108.0" text="Attendance" />
+      <TableView fx:id="TableCollumeView" layoutX="7.0" layoutY="347.0" prefHeight="137.0" prefWidth="466.0">
         <columns>
           <TableColumn fx:id="staffNameTableView" prefWidth="89.0" text="StaffName" />
           <TableColumn fx:id="DepartmentTableView" prefWidth="92.0" text="Department" />
+            <TableColumn fx:id="attendanceAttendanceTableView" prefWidth="142.0" text="Attendance" />
             <TableColumn fx:id="performanceScoreTableView" prefWidth="119.0" text="PerformanceScore" />
-            <TableColumn fx:id="attendanceAttendanceTableView" prefWidth="142.0" text="AttendanceAttendance" />
         </columns>
       </TableView>
       <TextField fx:id="StaffNameTextArea" layoutX="197.0" layoutY="46.0" />
       <TextField fx:id="PerformanceScoreTextArea" layoutX="197.0" layoutY="104.0" />
       <TextField fx:id="AttendanceAttendanceTextArea" layoutX="502.0" layoutY="104.0" />
       <ComboBox fx:id="DepartmentComboBox" layoutX="502.0" layoutY="46.0" prefWidth="150.0" />
-      <Button layoutX="84.0" layoutY="229.0" mnemonicParsing="false" onAction="#ApproveOnActionButton" prefHeight="49.0" prefWidth="122.0" text="Approve" />
-      <Button layoutX="330.0" layoutY="229.0" mnemonicParsing="false" onAction="#FlagForReviewOnActionButton" prefHeight="49.0" prefWidth="134.0" text="FlagForReview" />
-      <Button fx:id="HomeOnActionButton" layoutX="551.0" layoutY="497.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="91.0" text="Home" />
+      <Button layoutX="29.0" layoutY="154.0" mnemonicParsing="false" onAction="#ApproveOnActionButton" prefHeight="49.0" prefWidth="122.0" text="Approve" />
+      <Button layoutX="106.0" layoutY="212.0" mnemonicParsing="false" onAction="#FlagForReviewOnActionButton" prefHeight="49.0" prefWidth="134.0" text="FlagForReview" />
+      <Button layoutX="551.0" layoutY="497.0" mnemonicParsing="false" onAction="#BackToManagingDashboard" prefHeight="49.0" prefWidth="91.0" text="Home" />
+      <TextArea fx:id="Notification" layoutX="506.0" layoutY="154.0" prefHeight="200.0" prefWidth="191.0" promptText="Notification" />
+      <Button layoutX="211.0" layoutY="276.0" mnemonicParsing="false" onAction="#ShowPichartOnActionButton" prefHeight="49.0" prefWidth="122.0" text="ShowPichart" />
    </children>
 </AnchorPane>

@@ -4,6 +4,8 @@ module com.example.card_production {
     requires javafx.graphics;
     requires javafx.controls;
     requires java.management;
+    requires com.example.card_production;
+//    requires com.example.card_production;
 //    requires com.example.card_production;
 //    requires com.example.card_production;
 //    requires com.example.card_production;
