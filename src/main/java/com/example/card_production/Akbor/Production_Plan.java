@@ -1,13 +1,15 @@
 package com.example.card_production.Akbor;
 
-public class Production_Plan {
+import java.io.Serializable;
+
+public class Production_Plan implements Serializable {
 
 protected String productType,forecast,requiredMaterial;
 
     public Production_Plan() {
     }
 
-    public Production_Plan(String productType, String forecast, String requiredMaterial) {
+    public Production_Plan (String productType, String forecast, String requiredMaterial) {
         this.productType = productType;
         this.forecast = forecast;
         this.requiredMaterial = requiredMaterial;

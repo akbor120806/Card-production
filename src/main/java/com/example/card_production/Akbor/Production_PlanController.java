@@ -5,6 +5,7 @@ import com.example.card_production.Card_Production_Application;
 import com.example.card_production.Sign_Up_Scene;
 import com.example.card_production.Sign_Up_scene_Controller;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -69,7 +70,7 @@ public class Production_PlanController
 
         if (ProductTypeTextField.getText().isEmpty() ||
                 ForecastTextField.getText().isEmpty()||
-                RequiredMaterialComboBox.getItems().isEmpty()
+                RequiredMaterialComboBox.getValue()==null
         ){
             CommentTextArea.setText("Fill Up ProperLy");
         }else {
@@ -115,9 +116,11 @@ public class Production_PlanController
             }
 
 
-            for(Production_Plan c : userList){
+            oos.writeInt(userList.size());
+            for (Production_Plan c : userList) {
                 oos.writeObject(c);
             }
+
             oos.close();
 
         }catch (Exception e){
@@ -127,33 +130,41 @@ public class Production_PlanController
 
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void ViewAllPlanOnActionButton(ActionEvent actionEvent) {
-        FileInputStream fis = null;
-        ObjectInputStream ois = null;
+        TableView.getItems().clear();
+        userList.clear();
 
-        try{
-            File f = new File("Production_load.bin");
-            if(f.exists()){
-                fis = new FileInputStream(f);
-            }
-            else{
-                //alert: file does not exist
-            }
-            if(fis!=null){
-                ois = new ObjectInputStream(fis);
+        File f = new File("Production_load.bin");
+        if (!f.exists()) {
+            CommentTextArea.setText("No plan found!");
+            return;
+        }
+
+        try {
+            FileInputStream fis = new FileInputStream(f);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            while (true) {
+                try {
+                    int size = ois.readInt();
+                    for (int i = 0; i < size; i++) {
+                        userList.add((Production_Plan) ois.readObject());
+                    }
+
+                } catch (EOFException eof) {
+                    break;
+                }
             }
 
+            ois.close();
 
-            while(true){
-                TableView.getItems().add((Production_Plan) ois.readObject());
-            }
+            TableView.getItems().addAll(userList);
+
         } catch (Exception e) {
-            try {
-                ois.close();
-            } catch (IOException ex) {
-                //
-            }
+            e.printStackTrace();
+        }
     }
-    }
+
 }
+
