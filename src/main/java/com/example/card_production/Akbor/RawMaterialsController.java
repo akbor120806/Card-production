@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 public class RawMaterialsController {
     @javafx.fxml.FXML
-    private TableColumn RequiredQtyTableView;
+    private TableColumn<RawMaterials,String> RequiredQtyTableView;
     @javafx.fxml.FXML
     private TextField AvailableQtyTextField;
     @javafx.fxml.FXML
@@ -21,17 +21,17 @@ public class RawMaterialsController {
     @javafx.fxml.FXML
     private TextField RequiredQtyTextField;
     @javafx.fxml.FXML
-    private TableColumn ItemTableView;
+    private TableColumn<RawMaterials,String> ItemTableView;
     @javafx.fxml.FXML
-    private TableColumn RequiredTableView;
+    private TableColumn<RawMaterials,String> RequiredTableView;
     @javafx.fxml.FXML
     private TextField ItemTextField;
     @javafx.fxml.FXML
-    private TableColumn AvailableQtyTableView;
+    private TableColumn<RawMaterials,String> AvailableQtyTableView;
     @javafx.fxml.FXML
     private TextField RequiredTextField;
     @javafx.fxml.FXML
-    private TableView TableView;
+    private TableView<RawMaterials> TableView;
 
     @javafx.fxml.FXML
     public void initialize() {

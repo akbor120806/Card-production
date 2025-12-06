@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="558.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.card_production.Akbor.SalesReportController">
    <children>
-      <Label fx:id="ProductTaxtField" layoutX="73.0" layoutY="38.0" text="Product" />
+      <Label layoutX="73.0" layoutY="38.0" text="Product" />
       <Label layoutX="337.0" layoutY="38.0" text="Revenue" />
       <Label layoutX="73.0" layoutY="78.0" text="Cost" />
       <Label layoutX="341.0" layoutY="78.0" text="startDate" />
@@ -29,7 +29,7 @@
       <Label layoutX="73.0" layoutY="121.0" text="Type" />
       <Label layoutX="343.0" layoutY="121.0" text="endDate" />
       <Button layoutX="129.0" layoutY="174.0" mnemonicParsing="false" onAction="#aproveOnActionButton" prefHeight="60.0" prefWidth="113.0" text="Aproved" />
-      <TextField layoutX="129.0" layoutY="34.0" prefHeight="25.0" prefWidth="134.0" />
+      <TextField fx:id="ProductTaxtField" layoutX="129.0" layoutY="34.0" prefHeight="25.0" prefWidth="134.0" />
       <TextField fx:id="CostTextField" layoutX="129.0" layoutY="74.0" prefHeight="25.0" prefWidth="134.0" />
       <TextField fx:id="RevenueTextField" layoutX="397.0" layoutY="34.0" prefHeight="25.0" prefWidth="134.0" />
       <DatePicker fx:id="startDateKocalTime" layoutX="397.0" layoutY="74.0" prefHeight="25.0" prefWidth="134.0" />

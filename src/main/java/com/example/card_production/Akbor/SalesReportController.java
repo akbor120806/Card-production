@@ -1,5 +1,6 @@
 package com.example.card_production.Akbor;
 
+
 import com.example.card_production.Card_Production_Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -38,13 +39,13 @@ public class SalesReportController
     @javafx.fxml.FXML
     private TextArea NotificationTextField;
     @javafx.fxml.FXML
-    private Label ProductTaxtField;
-    @javafx.fxml.FXML
     private ComboBox<String> typeCombobox;
     @javafx.fxml.FXML
     private TableColumn <SalesReport,String>typeTableView;
     @javafx.fxml.FXML
     private TextArea profitTextarea;
+    @javafx.fxml.FXML
+    private TextField ProductTaxtField;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -65,20 +66,43 @@ public class SalesReportController
 
     @javafx.fxml.FXML
     public void aproveOnActionButton(ActionEvent actionEvent) {
+        boolean digitFound = false;
+        for(int i=0;i<ProductTaxtField.getText().length();i++){
+            if(ProductTaxtField.getText().charAt(i)>='0' &&
+                    ProductTaxtField.getText().charAt(i)<='9') digitFound = true;
+        }
+        if (ProductTaxtField.getText().isEmpty()||
+            RevenueTextField.getText().isEmpty()||
+                CostTextField.getText().isEmpty()||
+                digitFound
+        ){
+            NotificationTextField.setText("please Fill Up Properly ");
+        }
+        else {
+            SalesReport s = new SalesReport(
+                    ProductTaxtField.getText(),
+                    typeCombobox.getValue(),
+                    Integer.parseInt(RevenueTextField.getText()),
+                    Integer.parseInt(CostTextField.getText()),
+                    endDateLocalTime.getValue(),
+                    startDateKocalTime.getValue()
+            );
+            userList.add(s);
+            tableView.getItems().add(s);
+            NotificationTextField.setText("salesReport SuccessFull");
+
+            ProductTaxtField.clear();
+            typeCombobox.setValue("");
+            RevenueTextField.clear();
+            CostTextField.clear();
+            endDateLocalTime.setValue(LocalDate.of(2027,1,1));
+            startDateKocalTime.setValue(LocalDate.of(2026,1,1));
+        }
+
+
 
     }
 
-    @Deprecated
-    public void rejectOnActionButton(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void ExportPDFOnActionButton(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void ExportExcelOnActionButton(ActionEvent actionEvent) {
-    }
 
     @javafx.fxml.FXML
     public void Managing_Director_DashboardOnActionButton(ActionEvent actionEvent) {
@@ -98,5 +122,19 @@ public class SalesReportController
 
     @javafx.fxml.FXML
     public void profitOnActionButton(ActionEvent actionEvent) {
+        float TotalRevinue = 0;
+        float  totalCosr = 0;
+
+        for (SalesReport s : userList){
+            TotalRevinue = TotalRevinue +s.getRevenue();
+
+            totalCosr = totalCosr+s.getCost();
+           float profit =TotalRevinue-totalCosr;
+            profitTextarea.setText("total profit" + profit);
+        }
+
+
+
+
     }
 }
