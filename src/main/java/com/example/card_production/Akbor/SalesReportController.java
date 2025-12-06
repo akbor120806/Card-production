@@ -37,7 +37,7 @@ public class SalesReportController
     @javafx.fxml.FXML
     private Label ProductTaxtField;
     @javafx.fxml.FXML
-    private TextField ProfitTextField;
+    private ComboBox typeCombobox;
 
     @javafx.fxml.FXML
     public void initialize() {
