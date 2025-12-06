@@ -80,9 +80,7 @@ public class ClientOrderController
 //        if (!OrderQtyTextField.("\\d+")){
 //            NotificationTextField.setText("Digits Only");
 //        }
-//        if (OrderQtyTextField.length()){
-//            NotificationTextField.setText("must be 11 digit");
-//        }
+
 //        if (!DesignTextField.("\\d+")){
 //            NotificationTextField.setText("must proper gmail");
 //        }
