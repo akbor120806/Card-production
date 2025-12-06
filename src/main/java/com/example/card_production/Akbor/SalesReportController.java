@@ -8,18 +8,21 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 public class SalesReportController
 {
+    public static ArrayList<SalesReport> userList = new ArrayList<>();
     @javafx.fxml.FXML
-    private TableColumn RevenueTableView;
+    private TableColumn<SalesReport,String> RevenueTableView;
     @javafx.fxml.FXML
-    private TableColumn ProfitTableView;
+    private TableColumn <SalesReport,String>ProfitTableView;
     @javafx.fxml.FXML
     private DatePicker endDateLocalTime;
     @javafx.fxml.FXML
-    private TableColumn CostTableView;
+    private TableColumn<SalesReport,String> CostTableView;
     @javafx.fxml.FXML
-    private TableView tableView;
+    private TableView<SalesReport> tableView;
     @javafx.fxml.FXML
     private TextField CostTextField;
     @javafx.fxml.FXML
@@ -27,11 +30,11 @@ public class SalesReportController
     @javafx.fxml.FXML
     private TextField RevenueTextField;
     @javafx.fxml.FXML
-    private TableColumn endDateTableView;
+    private TableColumn <SalesReport,String>endDateTableView;
     @javafx.fxml.FXML
-    private TableColumn startDateTableView;
+    private TableColumn<SalesReport,String> startDateTableView;
     @javafx.fxml.FXML
-    private TableColumn ProductTableView;
+    private TableColumn<SalesReport,String> ProductTableView;
     @javafx.fxml.FXML
     private TextArea NotificationTextField;
     @javafx.fxml.FXML
@@ -41,6 +44,8 @@ public class SalesReportController
 
     @javafx.fxml.FXML
     public void initialize() {
+
+
     }
 
     @javafx.fxml.FXML
