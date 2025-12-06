@@ -6,8 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class SalesReportController
@@ -15,8 +17,6 @@ public class SalesReportController
     public static ArrayList<SalesReport> userList = new ArrayList<>();
     @javafx.fxml.FXML
     private TableColumn<SalesReport,String> RevenueTableView;
-    @javafx.fxml.FXML
-    private TableColumn <SalesReport,String>ProfitTableView;
     @javafx.fxml.FXML
     private DatePicker endDateLocalTime;
     @javafx.fxml.FXML
@@ -40,27 +40,43 @@ public class SalesReportController
     @javafx.fxml.FXML
     private Label ProductTaxtField;
     @javafx.fxml.FXML
-    private ComboBox typeCombobox;
+    private ComboBox<String> typeCombobox;
+    @javafx.fxml.FXML
+    private TableColumn <SalesReport,String>typeTableView;
+    @javafx.fxml.FXML
+    private TextArea profitTextarea;
 
     @javafx.fxml.FXML
     public void initialize() {
+        typeCombobox.getItems().addAll("SmartCard","VisaCard","MasterCard","invitationCard");
 
+        startDateKocalTime.setValue(LocalDate.of(2026,1,1));
+        endDateLocalTime.setValue(LocalDate.of(2027,1,1));
+
+
+        ProductTableView.setCellValueFactory(new PropertyValueFactory<SalesReport,String>("product"));
+        typeTableView.setCellValueFactory(new PropertyValueFactory<SalesReport,String>("type"));
+        RevenueTableView.setCellValueFactory(new PropertyValueFactory<SalesReport,String>("Revenue"));
+        CostTableView.setCellValueFactory(new PropertyValueFactory<SalesReport,String>("cost"));
+        endDateTableView.setCellValueFactory(new PropertyValueFactory<SalesReport,String>("endDate"));
+        startDateTableView.setCellValueFactory(new PropertyValueFactory<SalesReport,String>("startDate"));
 
     }
 
     @javafx.fxml.FXML
     public void aproveOnActionButton(ActionEvent actionEvent) {
+
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void rejectOnActionButton(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void ExportPDFOnActionButton(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void ExportExcelOnActionButton(ActionEvent actionEvent) {
     }
 
@@ -78,5 +94,9 @@ public class SalesReportController
         } catch (Exception e) {
 //            e.printStackTrace();
         }
+    }
+
+    @javafx.fxml.FXML
+    public void profitOnActionButton(ActionEvent actionEvent) {
     }
 }
